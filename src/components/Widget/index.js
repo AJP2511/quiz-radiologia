@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import db from "../../../db.json";
 
 const Widget = styled.div`
   margin-top: 24px;
@@ -28,6 +29,7 @@ Widget.Header = styled.header`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  justify-content: center;
   padding: 18px 32px;
   background-color: ${({ theme }) => theme.colors.primary};
 
@@ -37,6 +39,9 @@ Widget.Header = styled.header`
 `;
 
 Widget.Content = styled.div`
+  p {
+    text-align: center;
+  }
   padding: 24px 32px 32px 32px;
   & > *:first-child {
     margin-top: 0;
@@ -51,3 +56,25 @@ Widget.Content = styled.div`
 `;
 
 export default Widget;
+
+Widget.Nome = styled.div`
+  input {
+    display: block;
+    width: 100%;
+    height: 38px;
+    background-color: transparent;
+    border: 1px solid #fbfbfb;
+    border-radius: 3.5px;
+    padding: 0.5rem 1rem;
+    color: #fb1;
+  }
+  button {
+    width: 279px;
+    height: 36px;
+    margin-top: 25px;
+    border-radius: 4px;
+    background-color: #fb1;
+    font-weight: bold;
+    letter-spacing: 5px;
+  }
+`;

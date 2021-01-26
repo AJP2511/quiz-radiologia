@@ -4,6 +4,8 @@ import db from "../db.json";
 const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
+    font-family: Helvetica, Arial, monospace, sans-serif;
+
   }
   body {
     margin: 0;

@@ -18,7 +18,7 @@ export const QuizContainer = styled.div`
   }
 `;
 
-export default function Home() {
+export default function quiz() {
   const [nome, setNome] = React.useState("");
 
   return (
@@ -27,7 +27,7 @@ export default function Home() {
         <QuizLogo />
         <Widget>
           <Widget.Header>
-            <h1>{db.title}</h1>
+            <h1>PAGINA QUIZ</h1>
           </Widget.Header>
           <Widget.Content>
             <p>{db.description}</p>
@@ -38,7 +38,7 @@ export default function Home() {
                 value={nome}
                 onChange={({ target }) => setNome(target.value)}
               />
-              <Link href="/quiz">
+              <Link href="/">
                 <a>JOGAR</a>
               </Link>
             </Widget.Nome>
