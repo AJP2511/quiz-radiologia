@@ -5,17 +5,63 @@
   "questions": [
     {
       "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-      "title": "Como fazer um seletor por id via CSS?",
+      "title": "Os raios X são:",
       "description": "Essa é pra aquecer",
-      "answer": 2,
-      "alternatives": [".elemento", "*elemento", "#elemento", "%elemento"]
+      "answer": 1,
+      "alternatives": [
+        "Radiações eletromagnéticas não-ionizantes",
+        "Radiações eletromagnéticas ionizantes",
+        "Radiações corpusculares não-ionizantes",
+        "Radiações corpusculares ionizantes"
+      ]
     },
     {
       "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-      "title": "PERGUNTA 2",
+      "title": "Os princípios de proteção radiológica são:",
       "description": "Essa é pra aquecer",
       "answer": 2,
-      "alternatives": [".elemento", "*elemento", "#elemento", "%elemento"]
+      "alternatives": [
+        "Justificação, otimização e blindagem",
+        "Justificação, tempo e distância",
+        "Justificação, otimização, limitação de doses individuais e prevenção de acidentes",
+        "Tempo, otimização, limitação de doses individuais e blindagem"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
+      "title": "Os efeitos da radiação no organismo são dependentes do limiar de dose. Os efeitos stocásticos:",
+      "description": "Essa é pra aquecer",
+      "answer": 0,
+      "alternatives": [
+        "Não têm limiar de dose para ocorrerem e a probabilidade de aparecer o efeito é proporcional a dose",
+        "Têm limiar de dose para ocorrerem e a probabilidade de aparecer o efeito é proporcional a dose",
+        "Têm limiar de dose e abaixo do limiar não aparece efeito algum",
+        "Correspondem apenas aos danos provocados nas células que participam do processo reprodutivo de indivíduos que foram expostos à radiação"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
+      "title": "Os meios de contraste são amplamente utilizados em exames radiológicos. Sobre esse assunto, assinale a alternativa incorreta:",
+      "description": "Essa é pra aquecer",
+      "answer": 2,
+      "alternatives": [
+        "Podem ser positivos ou negativos.",
+        "São utilizados para destacar um órgão ou tecido em uma região com estruturas com densidades muito semelhantes.",
+        "Nunca causam reação alérgica.",
+        "O sulfato de bário não pode ser usado se o paciente tiver alguma suspeita de perfuração na região do exame."
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
+      "title": "Exames de ressonância magnética:",
+      "description": "Essa é pra aquecer",
+      "answer": 1,
+      "alternatives": [
+        "Utilizam radiação ionizante",
+        "São realizados pela interação dos prótons de hidrogênio do corpo com o campo magnético dos equipamentos",
+        "Não possuem nenhuma contraindicação para realização",
+        "Pessoas com qualquer tipo de marcapasso podem realizar o exame"
+      ]
     }
   ],
   "external": [],
