@@ -9,7 +9,7 @@ export default function ({ title, bg, description }) {
       <meta property="og:locale" content="pt_BR" />
 
       <meta property="og:title" content={title} />
-      <meta property="og:site_name" content="Radiologia" />
+      <meta property="og:site_name" content="Quiz Radiologia - DevAJ" />
 
       <meta property="og:description" content={description} />
       <meta property="og:image" content={bg} />
