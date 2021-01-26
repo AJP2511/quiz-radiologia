@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import db from "../../../db.json";
 
 const Widget = styled.div`
   margin-top: 24px;
@@ -35,6 +34,10 @@ Widget.Header = styled.header`
 
   * {
     margin: 0;
+  }
+
+  h1 {
+    font-size: 1.5rem;
   }
 `;
 

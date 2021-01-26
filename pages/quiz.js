@@ -31,25 +31,6 @@ export default function quiz() {
           </Widget.Header>
           <Widget.Content>
             <p>{db.description}</p>
-            <Widget.Nome>
-              <input
-                type="text"
-                placeholder="Diz aí seu nome para jogar :)"
-                value={nome}
-                onChange={({ target }) => setNome(target.value)}
-              />
-              <Link href="/">
-                <a>JOGAR</a>
-              </Link>
-            </Widget.Nome>
-          </Widget.Content>
-        </Widget>
-
-        <Widget>
-          <Widget.Content>
-            <h1>Quizes da Galera</h1>
-
-            <p>lorem ipsum dolor sit amet...</p>
           </Widget.Content>
         </Widget>
         <Footer />
