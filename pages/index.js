@@ -22,39 +22,49 @@ export default function Home() {
   const [nome, setNome] = React.useState("");
 
   return (
-    <QuizBackground backgroundImage={db.bg}>
-      <QuizContainer>
-        <QuizLogo />
-        <Widget>
-          <Widget.Header>
-            <h1>{db.title}</h1>
-          </Widget.Header>
-          <Widget.Content>
-            <p>{db.description}</p>
-            <Widget.Nome>
-              <input
-                type="text"
-                placeholder="Diz aí seu nome para jogar :)"
-                value={nome}
-                onChange={({ target }) => setNome(target.value)}
-              />
-              <Link href="/quiz">
-                <a>JOGAR</a>
-              </Link>
-            </Widget.Nome>
-          </Widget.Content>
-        </Widget>
+    <>
+      <div>
+        <head>
+          <meta
+            property="OG TAG"
+            content="https://image.winudf.com/v2/image/Y29tLmFwaW1vb2dlZWZhZm9vbXAueHJheXNjYW5uZXJmdW5fc2NyZWVuc2hvdHNfMF83MzcwZmRlYw/screen-0.jpg?fakeurl=1&type=.jpg"
+          />
+        </head>
+      </div>
+      <QuizBackground backgroundImage={db.bg}>
+        <QuizContainer>
+          <QuizLogo />
+          <Widget>
+            <Widget.Header>
+              <h1>{db.title}</h1>
+            </Widget.Header>
+            <Widget.Content>
+              <p>{db.description}</p>
+              <Widget.Nome>
+                <input
+                  type="text"
+                  placeholder="Diz aí seu nome para jogar :)"
+                  value={nome}
+                  onChange={({ target }) => setNome(target.value)}
+                />
+                <Link href="/quiz">
+                  <a>JOGAR</a>
+                </Link>
+              </Widget.Nome>
+            </Widget.Content>
+          </Widget>
 
-        <Widget>
-          <Widget.Content>
-            <h1>Quizes da Galera</h1>
+          <Widget>
+            <Widget.Content>
+              <h1>Quizes da Galera</h1>
 
-            <p>lorem ipsum dolor sit amet...</p>
-          </Widget.Content>
-        </Widget>
-        <Footer />
-      </QuizContainer>
-      <GitHubCorner projectUrl="https://github.com/AJP2511" />
-    </QuizBackground>
+              <p>lorem ipsum dolor sit amet...</p>
+            </Widget.Content>
+          </Widget>
+          <Footer />
+        </QuizContainer>
+        <GitHubCorner projectUrl="https://github.com/AJP2511" />
+      </QuizBackground>
+    </>
   );
 }
