@@ -18,6 +18,23 @@ export const QuizContainer = styled.div`
   }
 `;
 
+export const ButtonNext = styled.button`
+  color: #000;
+  width: 279px;
+  height: 36px;
+  margin-top: 25px;
+  border-radius: 4px;
+  background-color: #fb1;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px 1rem;
+  border: none;
+
+  &&:hover {
+    box-shadow: 0 0 0 3px #459bd8;
+  }
+`;
+
 export default function quiz() {
   const [nome, setNome] = React.useState("");
   const [pergunta, setPergunta] = React.useState(0);
@@ -45,10 +62,9 @@ export default function quiz() {
             <p>{db.questions[pergunta].description}</p>
             <QuizOptions
               alternativas={db.questions[pergunta].alternatives}
-              selecionado={selecionado}
               setSelecionado={setSelecionado}
             />
-            <button onClick={HandleClick}>Próxima pergunta</button>
+            <ButtonNext onClick={HandleClick}>Próxima pergunta</ButtonNext>
           </Widget.Content>
         </Widget>
         <Footer />

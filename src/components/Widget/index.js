@@ -37,7 +37,7 @@ Widget.Header = styled.header`
   }
 
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.125rem;
   }
 `;
 
@@ -58,7 +58,10 @@ Widget.Content = styled.div`
   }
 `;
 
-export default Widget;
+Widget.TitlePrincipal = styled.h1`
+  font-size: 1.5rem;
+  font-weight: bold;
+`;
 
 Widget.Nome = styled.div`
   input {
@@ -84,6 +87,14 @@ Widget.Nome = styled.div`
     letter-spacing: 5px;
     text-align: center;
     padding: 10px 1rem;
+    transform: translateY(-20px);
+    animation: moveLeft 0.5s forwards;
+  }
+
+  @keyframes moveLeft {
+    to {
+      transform: translateY(0);
+    }
   }
 
   @media screen and (max-width: 500px) {
@@ -92,3 +103,5 @@ Widget.Nome = styled.div`
     }
   }
 `;
+
+export default Widget;
