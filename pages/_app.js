@@ -4,7 +4,7 @@ import db from "../db.json";
 const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
-    font-family: Lato
+    font-family: 'Lato', sans-serif;
 
   }
   body {
@@ -13,7 +13,6 @@ const GlobalStyle = createGlobalStyle`
     /* New styles */
     display: flex;
     flex-direction: column;
-    font-family: 'Lato', sans-serif;
     // Deixa branco no começo
     color: ${({ theme }) => theme.colors.contrastText};
   }
