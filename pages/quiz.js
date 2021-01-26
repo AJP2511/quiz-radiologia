@@ -20,7 +20,7 @@ export const QuizContainer = styled.div`
 
 export const ButtonNext = styled.button`
   color: #000;
-  width: 279px;
+  width: 100%;
   height: 36px;
   margin-top: 25px;
   border-radius: 4px;
@@ -34,10 +34,6 @@ export const ButtonNext = styled.button`
     box-shadow: 0 0 0 3px #459bd8;
   }
 
-  @media screen and (max-width: 500px) {
-    a {
-      width: 208px;
-    }
   }
 `;
 
