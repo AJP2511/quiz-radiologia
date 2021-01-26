@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-export default function ({ title, bg, description }) {
+export default function Home({ title, bg, description }) {
   return (
     <Head>
       <title>{title}</title>
