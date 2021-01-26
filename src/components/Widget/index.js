@@ -68,7 +68,10 @@ Widget.Nome = styled.div`
     padding: 0.5rem 1rem;
     color: #fb1;
   }
-  button {
+  a {
+    display: block;
+    text-decoration: none;
+    color: #000;
     width: 279px;
     height: 36px;
     margin-top: 25px;
@@ -76,5 +79,7 @@ Widget.Nome = styled.div`
     background-color: #fb1;
     font-weight: bold;
     letter-spacing: 5px;
+    text-align: center;
+    padding: 10px 1rem;
   }
 `;
