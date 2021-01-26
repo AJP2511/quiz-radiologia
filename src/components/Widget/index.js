@@ -82,4 +82,10 @@ Widget.Nome = styled.div`
     text-align: center;
     padding: 10px 1rem;
   }
+
+  @media screen and (max-width: 500px) {
+    a {
+      width: 100%;
+    }
+  }
 `;
