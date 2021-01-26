@@ -33,6 +33,12 @@ export const ButtonNext = styled.button`
   &&:hover {
     box-shadow: 0 0 0 3px #459bd8;
   }
+
+  @media screen and (max-width: 500px) {
+    a {
+      width: 100%;
+    }
+  }
 `;
 
 export default function quiz() {
