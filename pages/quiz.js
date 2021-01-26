@@ -36,7 +36,7 @@ export const ButtonNext = styled.button`
 
   @media screen and (max-width: 500px) {
     a {
-      width: 100%;
+      width: 208px;
     }
   }
 `;
