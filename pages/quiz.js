@@ -19,19 +19,22 @@ export const QuizContainer = styled.div`
   }
 `;
 
-export const ButtonNext = styled.button`
-  color: #000;
-  width: 80%;
-  height: 36px;
-  margin: 5px 40px;
-  border-radius: 4px;
-  background-color: #fb1;
-  font-weight: bold;
-  text-align: center;
-  padding: 10px 1rem;
-  border: none;
+export const ButtonNext = styled.div`
+  width: 100%;
+  padding: 1rem;
+  button {
+    color: #000;
+    width: 100%;
+    height: 36px;
+    border-radius: 4px;
+    background-color: #fb1;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 1rem;
+    border: none;
+  }
 
-  &&:hover {
+  button:hover {
     box-shadow: 0 0 0 3px #459bd8;
   }
 `;
@@ -95,10 +98,12 @@ export default function quiz() {
                 {...question}
               />
             ))}
-            <ButtonNext onClick={handleClick}>PRÓXIMO</ButtonNext>
+            <ButtonNext>
+              <button onClick={handleClick}>PRÓXIMO</button>
+            </ButtonNext>
           </form>
         </Widget>
-        <Footer />
+        {/* <Footer /> */}
       </QuizContainer>
       <GitHubCorner projectUrl="https://github.com/AJP2511" />
     </QuizBackground>
