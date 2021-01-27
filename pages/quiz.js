@@ -40,8 +40,9 @@ export const ButtonNext = styled.div`
 `;
 
 export default function quiz() {
-  const [pergunta, setPergunta] = React.useState(0);
   const [slide, setSlide] = React.useState(0);
+  const [resultado, setResultado] = React.useState(false);
+  const [foto, setFoto] = React.useState(0);
   const [respostas, setRespostas] = React.useState({
     p1: "",
     p2: "",
@@ -50,16 +51,13 @@ export default function quiz() {
     p5: "",
   });
 
-  function resultadoFinal() {
-    console.log("oi");
-  }
-
   function handleClick() {
-    if (slide - db.questions.length - 1) {
+    if (slide < db.questions.length - 1) {
       setSlide(slide + 1);
+      setFoto(foto + 1);
     } else {
       setSlide(slide + 1);
-      resultadoFinal();
+      setResultado(!resultado);
     }
   }
 
@@ -76,32 +74,45 @@ export default function quiz() {
         <QuizLogo />
         <Widget>
           <Widget.Header>
-            <h1>{`Pergunta ${slide + 1} de 5`}</h1>
+            {resultado ? (
+              <h1>Resultado</h1>
+            ) : (
+              <h1>{`Pergunta ${slide + 1} de 5`}</h1>
+            )}
           </Widget.Header>
           <Widget.Content>
-            <Image
-              src={db.questions[slide].image}
-              alt="ilustracao"
-              layout="responsive"
-              width={400}
-              height={200}
-            />
-            <p>{db.questions[pergunta].description}</p>
-          </Widget.Content>
-          <form onSubmit={handleSubmit}>
-            {db.questions.map((question, index) => (
-              <QuizOptions
-                active={slide === index}
-                key={question.id}
-                value={respostas[question.id]}
-                onChange={handleChange}
-                {...question}
+            {!resultado && (
+              <Image
+                src={db.questions[foto].image}
+                alt="ilustracao"
+                layout="responsive"
+                width={400}
+                height={200}
               />
-            ))}
-            <ButtonNext>
-              <button onClick={handleClick}>PRÓXIMO</button>
-            </ButtonNext>
-          </form>
+            )}
+            {/* <p>{db.questions[slide].description}</p> */}
+          </Widget.Content>
+          {resultado ? (
+            <div>{`oi`}</div>
+          ) : (
+            <form onSubmit={handleSubmit}>
+              {db.questions.map((question, index) => (
+                <QuizOptions
+                  active={slide === index}
+                  key={question.id}
+                  value={respostas[question.id]}
+                  onChange={handleChange}
+                  slid={slide}
+                  setSlide={setSlide}
+                  db={db}
+                  {...question}
+                />
+              ))}
+              <ButtonNext>
+                <button onClick={handleClick}>PRÓXIMO</button>
+              </ButtonNext>
+            </form>
+          )}
         </Widget>
         {/* <Footer /> */}
       </QuizContainer>
