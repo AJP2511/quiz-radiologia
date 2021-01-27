@@ -90,10 +90,9 @@ export default function quiz() {
                 height={200}
               />
             )}
-            {/* <p>{db.questions[slide].description}</p> */}
           </Widget.Content>
           {resultado ? (
-            <div>{`oi`}</div>
+            <div>{`AQUI TERA O RESULTADO, ALGUM DIA`}</div>
           ) : (
             <form onSubmit={handleSubmit}>
               {db.questions.map((question, index) => (
