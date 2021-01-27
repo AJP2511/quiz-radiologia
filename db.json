@@ -4,7 +4,7 @@
   "description": "Teste os seus conhecimentos sobre Radiologia!",
   "questions": [
     {
-      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
+      "image": "/patas_gato.jpg",
       "title": "Os raios X são:",
       "description": "Essa é pra aquecer",
       "answer": 1,
@@ -16,7 +16,7 @@
       ]
     },
     {
-      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
+      "image": "/radio_fire.jpg",
       "title": "Os princípios de proteção radiológica são:",
       "description": "Essa é pra aquecer",
       "answer": 2,
@@ -28,7 +28,7 @@
       ]
     },
     {
-      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
+      "image": "/organica.jpg",
       "title": "Os efeitos da radiação no organismo são dependentes do limiar de dose. Os efeitos stocásticos:",
       "description": "Essa é pra aquecer",
       "answer": 0,
@@ -40,7 +40,7 @@
       ]
     },
     {
-      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
+      "image": "/contraste.jpg",
       "title": "Os meios de contraste são amplamente utilizados em exames radiológicos. Sobre esse assunto, assinale a alternativa incorreta:",
       "description": "Essa é pra aquecer",
       "answer": 2,
@@ -52,7 +52,7 @@
       ]
     },
     {
-      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
+      "image": "/resso.jpg",
       "title": "Exames de ressonância magnética:",
       "description": "Essa é pra aquecer",
       "answer": 1,

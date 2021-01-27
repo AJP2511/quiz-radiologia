@@ -56,6 +56,10 @@ Widget.Content = styled.div`
     list-style: none;
     padding: 0;
   }
+
+  image {
+    border: 3px solid #fb1;
+  }
 `;
 
 Widget.TitlePrincipal = styled.h1`

@@ -6,6 +6,7 @@ import QuizBackground from "../src/components/QuizBackground";
 import Footer from "../src/components/Footer";
 import GitHubCorner from "../src/components/GitHubCorner";
 import QuizOptions from "../src/components/QuizOptions";
+import Image from "next/image";
 
 export const QuizContainer = styled.div`
   width: 100%;
@@ -36,7 +37,6 @@ export const ButtonNext = styled.button`
 `;
 
 export default function quiz() {
-  const [nome, setNome] = React.useState("");
   const [pergunta, setPergunta] = React.useState(0);
   const [selecionado, setSelecionado] = React.useState(null);
   const [pontos, setPontos] = React.useState(0);
@@ -48,6 +48,7 @@ export default function quiz() {
       setPontos(pontos + 1);
     }
     setPergunta(pergunta + 1);
+    console.log(pontos);
   }
 
   return (
@@ -59,6 +60,13 @@ export default function quiz() {
             <h1>{db.questions[pergunta].title}</h1>
           </Widget.Header>
           <Widget.Content>
+            <Image
+              src={db.questions[pergunta].image}
+              alt="ilustracao"
+              layout="responsive"
+              width={400}
+              height={200}
+            />
             <p>{db.questions[pergunta].description}</p>
             <QuizOptions
               alternativas={db.questions[pergunta].alternatives}
