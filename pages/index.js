@@ -69,6 +69,12 @@ export default function Home() {
     router.push("/quiz");
   }
 
+  React.useEffect(() => {
+    if (window.localStorage.getItem("jogador")) {
+      setNome(window.localStorage.getItem("jogador"));
+    }
+  }, []);
+
   return (
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
