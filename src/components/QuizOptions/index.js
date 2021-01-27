@@ -11,19 +11,21 @@ export const ListItem = styled.li`
 
 export default function QuizOptions({ alternativas, setSelecionado }) {
   return (
-    <ul>
-      {alternativas.map((alternativa, id) => (
-        <ListItem key={id}>
-          <input
-            type="radio"
-            name="alternativa"
-            id={`altern${id}`}
-            value={alternativa}
-            onChange={({ target }) => setSelecionado(target.value)}
-          />
-          <label htmlFor={`altern${id}`}>{alternativa}</label>
-        </ListItem>
-      ))}
-    </ul>
+    <>
+      <ul>
+        {alternativas.map((alternativa, id) => (
+          <ListItem key={id}>
+            <input
+              type="radio"
+              name="alternativa"
+              id={`altern${id}`}
+              value={alternativa}
+              onChange={({ target }) => setSelecionado(target.value)}
+            />
+            <label htmlFor={`altern${id}`}>{alternativa}</label>
+          </ListItem>
+        ))}
+      </ul>
+    </>
   );
 }
