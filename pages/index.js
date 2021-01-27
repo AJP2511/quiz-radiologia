@@ -65,6 +65,7 @@ export default function Home() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    window.localStorage.setItem("jogador", nome);
     router.push("/quiz");
   }
 

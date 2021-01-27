@@ -19,6 +19,12 @@ export const QuizContainer = styled.div`
   }
 `;
 
+export const MsgFinal = styled.div`
+  text-align: center;
+  font-size: 1.5rem;
+  height: 200px;
+`;
+
 export const ButtonNext = styled.div`
   width: 100%;
   padding: 1rem;
@@ -50,14 +56,25 @@ export default function quiz() {
     p4: "",
     p5: "",
   });
+  const [pontos, setPontos] = React.useState(0);
+
+  function resultadoFinal() {
+    const corretas = db.questions.filter(
+      ({ id, answer }) => respostas[id] === answer
+    );
+    setPontos(corretas.length);
+  }
 
   function handleClick() {
     if (slide < db.questions.length - 1) {
       setSlide(slide + 1);
       setFoto(foto + 1);
+      console.log(respostas);
     } else {
       setSlide(slide + 1);
       setResultado(!resultado);
+      resultadoFinal();
+      console.log(respostas);
     }
   }
 
@@ -92,7 +109,12 @@ export default function quiz() {
             )}
           </Widget.Content>
           {resultado ? (
-            <div>{`AQUI TERA O RESULTADO, ALGUM DIA`}</div>
+            <MsgFinal>
+              {`Parabéns ${window.localStorage.getItem("jogador")} você fez ${
+                pontos * 20
+              }`}{" "}
+              pontos!
+            </MsgFinal>
           ) : (
             <form onSubmit={handleSubmit}>
               {db.questions.map((question, index) => (

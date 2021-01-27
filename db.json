@@ -8,7 +8,7 @@
       "image": "/patas_gato.jpg",
       "title": "Os raios X são:",
       "description": "Essa é pra aquecer",
-      "answer": 1,
+      "answer": "Radiações eletromagnéticas ionizantes",
       "alternatives": [
         "Radiações eletromagnéticas não-ionizantes",
         "Radiações eletromagnéticas ionizantes",
@@ -21,7 +21,7 @@
       "image": "/radio_fire.jpg",
       "title": "Os princípios de proteção radiológica são:",
       "description": "Essa é pra aquecer",
-      "answer": 2,
+      "answer": "Justificação, otimização, limitação de doses individuais e prevenção de acidentes",
       "alternatives": [
         "Justificação, otimização e blindagem",
         "Justificação, tempo e distância",
@@ -34,7 +34,7 @@
       "image": "/organica.jpg",
       "title": "Os efeitos da radiação no organismo são dependentes do limiar de dose. Os efeitos stocásticos:",
       "description": "Essa é pra aquecer",
-      "answer": 0,
+      "answer": "Não têm limiar de dose para ocorrerem e a probabilidade de aparecer o efeito é proporcional a dose",
       "alternatives": [
         "Não têm limiar de dose para ocorrerem e a probabilidade de aparecer o efeito é proporcional a dose",
         "Têm limiar de dose para ocorrerem e a probabilidade de aparecer o efeito é proporcional a dose",
@@ -47,7 +47,7 @@
       "image": "/contraste.jpg",
       "title": "Os meios de contraste são amplamente utilizados em exames radiológicos. Sobre esse assunto, assinale a alternativa incorreta:",
       "description": "Essa é pra aquecer",
-      "answer": 2,
+      "answer": "Nunca causam reação alérgica.",
       "alternatives": [
         "Podem ser positivos ou negativos.",
         "São utilizados para destacar um órgão ou tecido em uma região com estruturas com densidades muito semelhantes.",
@@ -60,7 +60,7 @@
       "image": "/resso.jpg",
       "title": "Exames de ressonância magnética:",
       "description": "Essa é pra aquecer",
-      "answer": 1,
+      "answer": "São realizados pela interação dos prótons de hidrogênio do corpo com o campo magnético dos equipamentos",
       "alternatives": [
         "Utilizam radiação ionizante",
         "São realizados pela interação dos prótons de hidrogênio do corpo com o campo magnético dos equipamentos",
