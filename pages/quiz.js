@@ -69,12 +69,10 @@ export default function quiz() {
     if (slide < db.questions.length - 1) {
       setSlide(slide + 1);
       setFoto(foto + 1);
-      console.log(respostas);
     } else {
       setSlide(slide + 1);
       setResultado(!resultado);
       resultadoFinal();
-      console.log(respostas);
     }
   }
 
