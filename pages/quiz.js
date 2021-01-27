@@ -40,8 +40,9 @@ export default function quiz() {
   const [pergunta, setPergunta] = React.useState(0);
   const [selecionado, setSelecionado] = React.useState(null);
   const [pontos, setPontos] = React.useState(0);
+  const [check, setCheck] = React.useState(false);
 
-  function HandleClick() {
+  function handleClick() {
     const indexCorrecao = db.questions[pergunta].answer;
     const ArrayRespostas = db.questions[pergunta].alternatives;
     if (selecionado == ArrayRespostas[indexCorrecao]) {
@@ -50,6 +51,10 @@ export default function quiz() {
     setPergunta(pergunta + 1);
     console.log(pontos);
   }
+
+  React.useEffect(() => {
+    setCheck(!check);
+  }, [selecionado]);
 
   return (
     <QuizBackground backgroundImage={db.bg}>
@@ -72,7 +77,9 @@ export default function quiz() {
               alternativas={db.questions[pergunta].alternatives}
               setSelecionado={setSelecionado}
             />
-            <ButtonNext onClick={HandleClick}>Próxima pergunta</ButtonNext>
+            {check && (
+              <ButtonNext onClick={handleClick}>Próxima pergunta</ButtonNext>
+            )}
           </Widget.Content>
         </Widget>
         <Footer />
