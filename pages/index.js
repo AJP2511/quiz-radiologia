@@ -75,6 +75,8 @@ export default function Home() {
     }
   }, []);
 
+  console.log(process.env.URL_FETCH);
+
   return (
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
