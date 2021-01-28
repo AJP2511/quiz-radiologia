@@ -67,45 +67,4 @@ Widget.TitlePrincipal = styled.h1`
   font-weight: bold;
 `;
 
-Widget.Nome = styled.div`
-  input {
-    display: block;
-    width: 100%;
-    height: 38px;
-    background-color: transparent;
-    border: 1px solid #fbfbfb;
-    border-radius: 3.5px;
-    padding: 0.5rem 1rem;
-    color: #fb1;
-  }
-  a {
-    display: block;
-    text-decoration: none;
-    color: #000;
-    width: 279px;
-    height: 36px;
-    margin-top: 25px;
-    border-radius: 4px;
-    background-color: #fb1;
-    font-weight: bold;
-    letter-spacing: 5px;
-    text-align: center;
-    padding: 10px 1rem;
-    transform: translateY(-20px);
-    animation: moveLeft 0.5s forwards;
-  }
-
-  @keyframes moveLeft {
-    to {
-      transform: translateY(0);
-    }
-  }
-
-  @media screen and (max-width: 500px) {
-    a {
-      width: 100%;
-    }
-  }
-`;
-
 export default Widget;

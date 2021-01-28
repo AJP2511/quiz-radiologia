@@ -5,7 +5,7 @@ import QuizLogo from "../src/components/QuizLogo";
 import QuizBackground from "../src/components/QuizBackground";
 import Footer from "../src/components/Footer";
 import GitHubCorner from "../src/components/GitHubCorner";
-import Link from "next/link";
+import { useRouter } from "next/router";
 
 export const QuizContainer = styled.div`
   width: 100%;
@@ -18,15 +18,66 @@ export const QuizContainer = styled.div`
   }
 `;
 
-export default function Home() {
-  const [nome, setNome] = React.useState("");
-  const regex = /^[a-z]\w+$/gi;
+export const ButtonGo = styled.button``;
 
-  function handleClick() {
-    if (regex.test(nome)) window.localStorage.setItem("jogador", nome);
+export const Form = styled.form`
+  input {
+    display: block;
+    width: 100%;
+    height: 38px;
+    background-color: transparent;
+    border: 1px solid #fbfbfb;
+    border-radius: 3.5px;
+    padding: 0.5rem 1rem;
+    color: #fb1;
   }
 
+  button {
+    color: #000;
+    width: 100%;
+    height: 36px;
+    margin-top: 25px;
+    border-radius: 4px;
+    background-color: #fb1;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 1rem;
+    border: none;
+    letter-spacing: 4px;
+  }
+
+  button:hover {
+    box-shadow: 0 0 0 3px #459bd8;
+  }
+
+  button:disabled {
+    background-color: #888;
+  }
+
+  button:disabled:hover {
+    box-shadow: none;
+  }
+`;
+
+export default function Home() {
+  const [nome, setNome] = React.useState("");
+  const router = useRouter();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    window.localStorage.setItem("jogador", nome);
+    router.push("/quiz");
+  }
+
+<<<<<<< HEAD
   console.log(process.env.URL_FETCH);
+=======
+  React.useEffect(() => {
+    if (window.localStorage.getItem("jogador")) {
+      setNome(window.localStorage.getItem("jogador"));
+    }
+  }, []);
+>>>>>>> 92da40aaa4af96259b5f43c84d5a3596d372cc4e
 
   return (
     <QuizBackground backgroundImage={db.bg}>
@@ -38,7 +89,7 @@ export default function Home() {
           </Widget.Header>
           <Widget.Content>
             <p>{db.description}</p>
-            <Widget.Nome>
+            <Form onSubmit={handleSubmit}>
               <input
                 type="text"
                 placeholder="Diz aí seu nome para jogar :)"
@@ -46,12 +97,8 @@ export default function Home() {
                 onChange={({ target }) => setNome(target.value)}
                 required
               />
-              {regex.test(nome) && (
-                <Link href="/quiz">
-                  <a onClick={handleClick}>JOGAR</a>
-                </Link>
-              )}
-            </Widget.Nome>
+              <button disabled={nome.length === 0}>JOGAR</button>
+            </Form>
           </Widget.Content>
         </Widget>
 
