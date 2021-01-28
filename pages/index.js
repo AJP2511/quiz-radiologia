@@ -26,6 +26,8 @@ export default function Home() {
     if (regex.test(nome)) window.localStorage.setItem("jogador", nome);
   }
 
+  console.log(process.env.URL_FETCH);
+
   return (
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
