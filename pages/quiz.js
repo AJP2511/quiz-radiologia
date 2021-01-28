@@ -7,6 +7,7 @@ import Footer from "../src/components/Footer";
 import GitHubCorner from "../src/components/GitHubCorner";
 import QuizOptions from "../src/components/QuizOptions";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 export const QuizContainer = styled.div`
   width: 100%;
@@ -46,6 +47,7 @@ export const ButtonNext = styled.div`
 `;
 
 export default function quiz() {
+  const router = useRouter();
   const [slide, setSlide] = React.useState(0);
   const [resultado, setResultado] = React.useState(false);
   const [foto, setFoto] = React.useState(0);
@@ -57,6 +59,10 @@ export default function quiz() {
     p5: "",
   });
   const [pontos, setPontos] = React.useState(0);
+
+  function handleBack() {
+    router.push("/");
+  }
 
   function resultadoFinal() {
     const corretas = db.questions.filter(
@@ -127,12 +133,17 @@ export default function quiz() {
             )}
           </Widget.Content>
           {resultado ? (
-            <MsgFinal>
-              {`Parabéns ${window.localStorage.getItem("jogador")} você fez ${
-                pontos * 20
-              }`}{" "}
-              pontos!
-            </MsgFinal>
+            <>
+              <MsgFinal>
+                {`Parabéns ${window.localStorage.getItem("jogador")} você fez ${
+                  pontos * 20
+                }`}{" "}
+                pontos!
+              </MsgFinal>
+              <ButtonNext>
+                <button onClick={handleBack}>Voltar para o início</button>
+              </ButtonNext>
+            </>
           ) : (
             <form onSubmit={handleSubmit}>
               {db.questions.map((question, index) => (
