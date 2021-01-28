@@ -37,10 +37,16 @@ export const RankContainer = styled.div`
 
 export const DivRankInterna = styled.ul`
   border: 1px solid #fb1;
+  background-color: rgba(51, 51, 51, 0.5);
   border-radius: 10px;
   padding: 4rem;
+  max-height: 300px;
+  overflow: auto;
   display: flex;
   flex-direction: column;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: moveLeft 0.3s forwards;
 
   li {
     margin-bottom: 1rem;
@@ -57,6 +63,29 @@ export const DivRankInterna = styled.ul`
     background-color: #fb1;
     left: -5px;
     top: -2px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #459bd8;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2f82bd;
+  }
+
+  @keyframes moveLeft {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 `;
 
