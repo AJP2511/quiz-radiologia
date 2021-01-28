@@ -1,5 +1,5 @@
 module.exports = {
   env: {
-    MONGO_URL: @url-fetch,
+    MONGO_URL: "https://api-alura.herokuapp.com/",
   },
 };
