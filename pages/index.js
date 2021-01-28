@@ -17,6 +17,10 @@ export const RankContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
+
+  h1 {
+    font-size: 2.5rem;
+  }
 `;
 
 export const DivRankInterna = styled.ul`
@@ -155,6 +159,7 @@ export default function Home() {
         </QuizContainer>
         {rank && (
           <RankContainer>
+            <h1>Ranking global!</h1>
             <DivRankInterna>
               {rank.map(({ nome, pontos }) => (
                 <li key={nome}>{`${nome} - ${pontos} Pontos`}</li>
