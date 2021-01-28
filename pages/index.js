@@ -60,6 +60,35 @@ export const DivRankInterna = styled.ul`
   }
 `;
 
+export const Loader = styled.div`
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+`;
+
 export const QuizContainer = styled.div`
   width: 100%;
   max-width: 350px;
@@ -116,6 +145,8 @@ export default function Home() {
   const [name, setname] = React.useState("");
   const router = useRouter();
   const [rank, setRank] = React.useState(null);
+  const [loading, setLoading] = React.useState(false);
+  const [erro, setErro] = React.useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -129,9 +160,16 @@ export default function Home() {
     }
 
     async function rankGlobal() {
-      const response = await fetch(process.env.MONGO_URL);
-      const json = await response.json();
-      setRank(json);
+      try {
+        setLoading(true);
+        const response = await fetch(process.env.MONGO_URL);
+        const json = await response.json();
+        setRank(json);
+      } catch (err) {
+        setErro(err);
+      } finally {
+        setLoading(false);
+      }
     }
     rankGlobal();
   }, []);
@@ -169,16 +207,24 @@ export default function Home() {
           </Widget>
           <Footer />
         </QuizContainer>
-        {rank && (
+        {loading ? (
           <RankContainer>
-            <h1>Ranking global!</h1>
-            <DivRankInterna>
-              {rank.map(({ nome, pontos }) => (
-                <li key={nome}>{`${nome} - ${pontos} Pontos`}</li>
-              ))}
-            </DivRankInterna>
+            <Loader />
           </RankContainer>
+        ) : (
+          rank && (
+            <RankContainer>
+              <h1>Ranking global!</h1>
+              <p>Faça 60pts ou mais e coloque seu nome aqui!</p>
+              <DivRankInterna>
+                {rank.map(({ nome, pontos }) => (
+                  <li key={nome}>{`${nome} - ${pontos} Pontos`}</li>
+                ))}
+              </DivRankInterna>
+            </RankContainer>
+          )
         )}
+        {erro && <h1>{erro}</h1>}
       </MainContainer>
       <GitHubCorner projectUrl="https://github.com/AJP2511" />
     </QuizBackground>
