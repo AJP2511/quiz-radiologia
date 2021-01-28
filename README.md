@@ -8,4 +8,3 @@ também utilizo um Rest APi que se comunica com um MongoDB (Atlas) para salvar o
 
 O link para o servidor NODEJS que se comunica com o banco de dados é: https://github.com/AJP2511/node-quiz
 
-A API pode ser verificada em https://api-alura.herokuapp.com/
