@@ -26,6 +26,13 @@ export const RankContainer = styled.div`
   h1 {
     font-size: 2.5rem;
   }
+
+  @media screen and (max-width: 500px) {
+    h1 {
+      padding-top: 1rem;
+      border-top: 2px solid #459bd8;
+    }
+  }
 `;
 
 export const DivRankInterna = styled.ul`
