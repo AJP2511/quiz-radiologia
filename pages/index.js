@@ -69,15 +69,11 @@ export default function Home() {
     router.push("/quiz");
   }
 
-<<<<<<< HEAD
-  console.log(process.env.URL_FETCH);
-=======
   React.useEffect(() => {
     if (window.localStorage.getItem("jogador")) {
       setNome(window.localStorage.getItem("jogador"));
     }
   }, []);
->>>>>>> 92da40aaa4af96259b5f43c84d5a3596d372cc4e
 
   return (
     <QuizBackground backgroundImage={db.bg}>
