@@ -83,6 +83,26 @@ export default function quiz() {
   function handleChange({ target }) {
     setRespostas({ ...respostas, [target.id]: target.value });
   }
+
+  if (resultado) {
+    const body = {
+      nome: window.localStorage.getItem("jogador"),
+      pontos: pontos * 20,
+    };
+
+    async function salvaDadosDb() {
+      const response = await fetch(process.env.MONGO_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "cors",
+        cache: "default",
+        body: JSON.stringify(body),
+      });
+    }
+    salvaDadosDb();
+  }
   return (
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
@@ -133,7 +153,6 @@ export default function quiz() {
             </form>
           )}
         </Widget>
-        {/* <Footer /> */}
       </QuizContainer>
       <GitHubCorner projectUrl="https://github.com/AJP2511" />
     </QuizBackground>

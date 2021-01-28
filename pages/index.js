@@ -7,6 +7,43 @@ import Footer from "../src/components/Footer";
 import GitHubCorner from "../src/components/GitHubCorner";
 import { useRouter } from "next/router";
 
+export const MainContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+`;
+
+export const RankContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const DivRankInterna = styled.ul`
+  border: 1px solid #fb1;
+  border-radius: 10px;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+
+  li {
+    margin-bottom: 1rem;
+    list-style: none;
+  }
+
+  li::before {
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    position: relative;
+    width: 10px;
+    height: 10px;
+    background-color: #fb1;
+    left: -5px;
+    top: -2px;
+  }
+`;
+
 export const QuizContainer = styled.div`
   width: 100%;
   max-width: 350px;
@@ -60,55 +97,72 @@ export const Form = styled.form`
 `;
 
 export default function Home() {
-  const [nome, setNome] = React.useState("");
+  const [name, setname] = React.useState("");
   const router = useRouter();
+  const [rank, setRank] = React.useState(null);
 
   function handleSubmit(e) {
     e.preventDefault();
-    window.localStorage.setItem("jogador", nome);
+    window.localStorage.setItem("jogador", name);
     router.push("/quiz");
   }
 
   React.useEffect(() => {
     if (window.localStorage.getItem("jogador")) {
-      setNome(window.localStorage.getItem("jogador"));
+      setname(window.localStorage.getItem("jogador"));
     }
-  }, []);
 
-  console.log(process.env.URL_FETCH);
+    async function rankGlobal() {
+      const response = await fetch(process.env.MONGO_URL);
+      const json = await response.json();
+      setRank(json);
+    }
+    rankGlobal();
+  }, []);
 
   return (
     <QuizBackground backgroundImage={db.bg}>
-      <QuizContainer>
-        <QuizLogo />
-        <Widget>
-          <Widget.Header>
-            <Widget.TitlePrincipal>{`☢ ${db.title} ☢`}</Widget.TitlePrincipal>
-          </Widget.Header>
-          <Widget.Content>
-            <p>{db.description}</p>
-            <Form onSubmit={handleSubmit}>
-              <input
-                type="text"
-                placeholder="Diz aí seu nome para jogar :)"
-                value={nome}
-                onChange={({ target }) => setNome(target.value)}
-                required
-              />
-              <button disabled={nome.length === 0}>JOGAR</button>
-            </Form>
-          </Widget.Content>
-        </Widget>
+      <MainContainer>
+        <QuizContainer>
+          <QuizLogo />
+          <Widget>
+            <Widget.Header>
+              <Widget.TitlePrincipal>{`☢ ${db.title} ☢`}</Widget.TitlePrincipal>
+            </Widget.Header>
+            <Widget.Content>
+              <p>{db.description}</p>
+              <Form onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  placeholder="Diz aí seu nome para jogar :)"
+                  value={name}
+                  onChange={({ target }) => setname(target.value)}
+                  required
+                />
+                <button disabled={name.length === 0}>JOGAR</button>
+              </Form>
+            </Widget.Content>
+          </Widget>
 
-        <Widget>
-          <Widget.Content>
-            <h1>Quizes da Galera</h1>
+          <Widget>
+            <Widget.Content>
+              <h1>Quizes da Galera</h1>
 
-            <p>lorem ipsum dolor sit amet...</p>
-          </Widget.Content>
-        </Widget>
-        <Footer />
-      </QuizContainer>
+              <p>lorem ipsum dolor sit amet...</p>
+            </Widget.Content>
+          </Widget>
+          <Footer />
+        </QuizContainer>
+        {rank && (
+          <RankContainer>
+            <DivRankInterna>
+              {rank.map(({ nome, pontos }) => (
+                <li key={nome}>{`${nome} - ${pontos} Pontos`}</li>
+              ))}
+            </DivRankInterna>
+          </RankContainer>
+        )}
+      </MainContainer>
       <GitHubCorner projectUrl="https://github.com/AJP2511" />
     </QuizBackground>
   );
