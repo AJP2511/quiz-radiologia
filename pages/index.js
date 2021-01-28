@@ -39,7 +39,7 @@ export const DivRankInterna = styled.ul`
   border: 1px solid #fb1;
   background-color: rgba(51, 51, 51, 0.5);
   border-radius: 10px;
-  padding: 4rem;
+  padding: 1rem 4rem;
   max-height: 300px;
   overflow: auto;
   display: flex;
