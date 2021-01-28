@@ -10,6 +10,11 @@ import { useRouter } from "next/router";
 export const MainContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+  @media screen and (max-width: 500px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const RankContainer = styled.div`
