@@ -118,6 +118,40 @@ export const Loader = styled.div`
   }
 `;
 
+export const ListGalera = styled.ul`
+  text-align: center;
+
+  h1 {
+    margin-bottom: 2rem;
+  }
+  li {
+    list-style: none;
+    margin-bottom: 1rem;
+    background-color: #fb1;
+    padding: 0.5rem;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  li:hover {
+    background-color: #b5850c;
+  }
+
+  a {
+    text-decoration: none;
+    font-size: 1.125rem;
+    color: #f3f3f3;
+    font-weight: bold;
+  }
+
+  @media screen and (max-width: 500px) {
+    a {
+      font-size: 0.8rem;
+    }
+  }
+`;
+
 export const QuizContainer = styled.div`
   width: 100%;
   max-width: 350px;
@@ -240,9 +274,14 @@ export default function Home() {
 
           <Widget>
             <Widget.Content>
-              <h1>Quizes da Galera</h1>
-
-              <p>lorem ipsum dolor sit amet...</p>
+              <ListGalera>
+                <h1>Quizes da Galera</h1>
+                {db.external.map((item, index) => (
+                  <li key={index}>
+                    <a href="item">{item}</a>
+                  </li>
+                ))}
+              </ListGalera>
             </Widget.Content>
           </Widget>
           <Footer />

@@ -69,7 +69,10 @@
       ]
     }
   ],
-  "external": [],
+  "external": [
+    "https://aluraquiz-coffee.leonardot07.vercel.app/",
+    "https://pokemon-quiz.neorogerio.vercel.app/"
+  ],
   "theme": {
     "colors": {
       "primary": "#459bd8",
