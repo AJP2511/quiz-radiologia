@@ -125,6 +125,8 @@ export const QuizContainer = styled.div`
   margin: auto 10%;
   opacity: 0;
   transform: translateY(-100px);
+  animation: showUp 0.5s forwards;
+
   @media screen and (max-width: 500px) {
     margin: auto;
     padding: 15px;
