@@ -278,7 +278,7 @@ export default function Home() {
                 <h1>Quizes da Galera</h1>
                 {db.external.map((item, index) => (
                   <li key={index}>
-                    <a href="item">{item}</a>
+                    <a href={item}>{item}</a>
                   </li>
                 ))}
               </ListGalera>
