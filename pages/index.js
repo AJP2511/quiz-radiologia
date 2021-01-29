@@ -123,9 +123,18 @@ export const QuizContainer = styled.div`
   max-width: 350px;
   padding-top: 45px;
   margin: auto 10%;
+  opacity: 0;
+  transform: translateY(-100px);
   @media screen and (max-width: 500px) {
     margin: auto;
     padding: 15px;
+  }
+
+  @keyframes showUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 `;
 
