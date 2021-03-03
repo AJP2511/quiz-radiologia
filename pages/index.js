@@ -228,23 +228,23 @@ export default function Home() {
     router.push("/quiz");
   }
 
-  React.useEffect(() => {
-    if (window.localStorage.getItem("jogador")) {
-      setname(window.localStorage.getItem("jogador"));
-    }
+  // React.useEffect(() => {
+  //   if (window.localStorage.getItem("jogador")) {
+  //     setname(window.localStorage.getItem("jogador"));
+  //   }
 
-    // async function rankGlobal() {
-    //   try {
-    //     setLoading(true);
-    //     const response = await fetch(process.env.MONGO_URL);
-    //     const json = await response.json();
-    //     setRank(json);
-    //   } catch (err) {
-    //     setErro(err);
-    //   } finally {
-    //     setLoading(false);
-    //   }
-    // }
+  // async function rankGlobal() {
+  //   try {
+  //     setLoading(true);
+  //     const response = await fetch(process.env.MONGO_URL);
+  //     const json = await response.json();
+  //     setRank(json);
+  //   } catch (err) {
+  //     setErro(err);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // }
   //   rankGlobal();
   // }, []);
 
