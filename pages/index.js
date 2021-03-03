@@ -233,20 +233,20 @@ export default function Home() {
       setname(window.localStorage.getItem("jogador"));
     }
 
-    async function rankGlobal() {
-      try {
-        setLoading(true);
-        const response = await fetch(process.env.MONGO_URL);
-        const json = await response.json();
-        setRank(json);
-      } catch (err) {
-        setErro(err);
-      } finally {
-        setLoading(false);
-      }
-    }
-    rankGlobal();
-  }, []);
+    // async function rankGlobal() {
+    //   try {
+    //     setLoading(true);
+    //     const response = await fetch(process.env.MONGO_URL);
+    //     const json = await response.json();
+    //     setRank(json);
+    //   } catch (err) {
+    //     setErro(err);
+    //   } finally {
+    //     setLoading(false);
+    //   }
+    // }
+  //   rankGlobal();
+  // }, []);
 
   return (
     <QuizBackground backgroundImage={db.bg}>
